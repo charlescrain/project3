@@ -1,11 +1,9 @@
 #include <cstdlib>
 #include <iostream>
-#include <sstream>
-#include <vector>
 #include <string>
 
 #include "Node.h"
-#include "LinkedList.cpp"
+#include "LinkedList.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {
