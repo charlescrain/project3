@@ -11,6 +11,6 @@ class Heap {
 	public:
 		Heap(Relation *,int);		//constructor
 		void printHeap();
-//		Relation deleteMin();		//Deletes top of Heap and returns deleted relation
+		Relation deleteMin();		//Deletes top of Heap and returns deleted relation
 };
 #endif
