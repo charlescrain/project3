@@ -4,6 +4,7 @@
 
 #include "Node.h"
 #include "LinkedList.h"
+#include "Heap.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -17,6 +18,7 @@ int main(int argc, char* argv[]) {
 	Relation *weightArray = new Relation[E];	//Array to hold nodes and weight for heap.
 	LinkedList *llistArray = new LinkedList[N+1]; //to make adjacency list
 
+
 	for(int i=0;i<E;i++){
 		cin >> node1 >> node2  >> edge;
 		weightArray[i].weight = edge;
@@ -29,10 +31,19 @@ int main(int argc, char* argv[]) {
 		cout << weightArray[i].n1 << weightArray[i].n2 << weightArray[i].weight
 			<< "\n";
 	}
+	
 	for(int i=1;i<N+1;i++){
 		llistArray[i].printList(stdout);
 		cout << "\n";
 	}
+	Heap *heap = new Heap(weightArray,E);
+	cout << "\n";
+	heap->printHeap();
+	heap->deleteMin();
+	heap->deleteMin();
+	cout << "\n";
+	heap->printHeap();
+
 	return 0;
 
 }
