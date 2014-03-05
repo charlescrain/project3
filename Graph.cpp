@@ -40,7 +40,7 @@ int Graph::find(int n){
 	for(i=0; i<size; i++){
 		if (array[i].getHead()>0){ // if head is 0 then linked list is empty
 			if(array[i].countOccurrences(n) > 0){ // if value is found
-				printf("found %i!\n", n);
+				
 				return array[i].getHead();// return first value (name of the set)
 			}
 		}
@@ -59,6 +59,16 @@ void Graph::addUniqueSet(int a, int b){
 		}
 	}
 	
+}
+// case where the relation includes a node from a set and an independant node
+// so we merge the node onto the existing set
+void Graph::mergeNode(int name, int a){
+	for(int i = 0; i<size; i++){
+		if(array[i].getHead() == name){
+			array[i].addTail(a);
+			return;
+		}
+	}
 }
 
 void Graph::print(){

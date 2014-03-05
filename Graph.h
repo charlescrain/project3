@@ -14,6 +14,7 @@ class Graph{
 		int find(int);
 		void addUniqueSet(int a, int b);
 		void print();
+		void mergeNode(int name,int a);
 
 };
 

@@ -29,8 +29,8 @@ int main(int argc, char* argv[]) {
 		llistArray[node2].addTail(node1);
 	}
 	for(int i=0;i<E;i++){
-		cout << weightArray[i].n1 << weightArray[i].n2 << weightArray[i].weight
-			<< "\n";
+	//	cout << weightArray[i].n1 << weightArray[i].n2 << weightArray[i].weight
+			//<< "\n";
 	}
 	
 /*
@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
 	}
 */	
 	Heap *heap = new Heap(weightArray,E);
-	cout << "\n";
+	//cout << "\n";
 /*
 	heap->printHeap();
 	heap->deleteMin();
@@ -59,18 +59,26 @@ int main(int argc, char* argv[]) {
 		two = r.n2;
 		findOne = graph.find(r.n1);
 		findTwo = graph.find(r.n2);
-		printf("Relation one = %i, two = %i,  weight = %i\n", one, two, r.weight);
+		//printf("Relation one = %i, two = %i,  weight = %i\n", one, two, r.weight);
 		//printf("findOne : %i ", findOne);
 		//printf("findTwo : %i\n", findTwo);
 
 		if(findOne == 0 && findTwo == 0){ //relation is an independant set
-			printf("added unique set\n");
+			//printf("added unique set\n");
+			cout <<one << " " << two << "\n";
 			graph.addUniqueSet(one,two);
 		}else if(findOne> 0 && findTwo > 0 && findTwo != findOne){ //relation has nodes in two independent sets
-			printf("merged list %i and %i\n", findOne, findTwo);
+			//printf("merged list %i and %i\n", findOne, findTwo);
+			cout <<one << " " << two << "\n";
 			graph.Union(findOne,findTwo);
+		}else if(findOne > 0 && findTwo ==0){ //Relation has a node from existing set, and an independent set
+			graph.mergeNode(findOne,two);
+			cout <<one << " " << two << "\n";
+		}else if(findOne ==0 && findTwo> 0){
+			graph.mergeNode(findTwo,one);
+			cout <<one << " " << two << "\n";
 		}
-		graph.print();
+		//graph.print();
 	}//for loop
 
 
