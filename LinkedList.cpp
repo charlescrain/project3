@@ -230,6 +230,8 @@ int LinkedList::removeTailRec()
 	else
 		removeTail(head->next);
 
+	return -1;
+
 	// if none of those were true, call the recursive helper method
 }
 
@@ -252,6 +254,8 @@ int LinkedList::removeTail(Node *h)
 	}
 	else
 		removeTail(h->next);
+
+	return -1;
 
 	// else call the recursive method
 }
@@ -358,10 +362,7 @@ void LinkedList::addSorted(int v)
 */
 void LinkedList::addSorted(Node *n, int v)
 {
-	
 	// base case(s)
-
-	
 	if(n->next->value >= v )
 	{
 		Node *t = new Node;
@@ -378,6 +379,22 @@ void LinkedList::addSorted(Node *n, int v)
 
 
 	// general case
+}
+
+// getHead value
+int LinkedList::getHead()
+{
+	return head->value;
+}
+
+void LinkedList::merge(LinkedList *otherlist){
+	if(otherlist->head==NULL)
+		return;
+	else{
+		this->tail = otherlist->head;
+	}
+	return;
+
 }
 
 

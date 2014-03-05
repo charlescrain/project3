@@ -9,7 +9,7 @@ class Node {
 
 class Relation {
 	public:
-		int n1, n2, weight;
+		int n1, n2, weight, parent;
 };
 
 #endif
