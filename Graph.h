@@ -13,6 +13,7 @@ class Graph{
 		void Union(int, int);
 		int find(int);
 		void addUniqueSet(int a, int b);
+		void print();
 
 };
 

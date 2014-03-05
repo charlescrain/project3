@@ -5,6 +5,7 @@
 #include "Node.h"
 #include "LinkedList.h"
 #include "Heap.h"
+#include "Graph.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -32,19 +33,46 @@ int main(int argc, char* argv[]) {
 			<< "\n";
 	}
 	
+/*
 	for(int i=1;i<N+1;i++){
 		llistArray[i].printList(stdout);
 		cout << "\n";
 	}
+*/	
 	Heap *heap = new Heap(weightArray,E);
 	cout << "\n";
+/*
 	heap->printHeap();
 	heap->deleteMin();
 	heap->deleteMin();
 	cout << "\n";
 	heap->printHeap();
+*/
+	Graph graph(E);
+	Relation r;
+	int one, two, findOne, findTwo;
+	for(int i=0; i < E; i++){
+		//printf("hi\n");
+		r = heap->deleteMin();
+		//printf("yo12\n");
+		one = r.n1;
+		two = r.n2;
+		findOne = graph.find(r.n1);
+		findTwo = graph.find(r.n2);
+		printf("Relation one = %i, two = %i,  weight = %i\n", one, two, r.weight);
+		//printf("findOne : %i ", findOne);
+		//printf("findTwo : %i\n", findTwo);
 
-	return 0;
+		if(findOne == 0 && findTwo == 0){ //relation is an independant set
+			printf("added unique set\n");
+			graph.addUniqueSet(one,two);
+		}else if(findOne> 0 && findTwo > 0 && findTwo != findOne){ //relation has nodes in two independent sets
+			printf("merged list %i and %i\n", findOne, findTwo);
+			graph.Union(findOne,findTwo);
+		}
+		graph.print();
+	}//for loop
+
 
 }
 

@@ -383,18 +383,14 @@ void LinkedList::addSorted(Node *n, int v)
 
 // getHead value
 int LinkedList::getHead()
-{
-	return head->value;
-}
-
-void LinkedList::merge(LinkedList *otherlist){
-	if(otherlist->head==NULL)
-		return;
-	else{
-		this->tail = otherlist->head;
+{	
+	if(head == NULL){
+		return 0;
+	}else{
+		return head->value;
 	}
-	return;
-
 }
+
+
 
 

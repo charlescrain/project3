@@ -33,8 +33,8 @@ class LinkedList {
 	// returns int value of node pointed to by head
 	// used to name the sets for unionfind
 	int getHead();
-	// merge will take a linked list an append it onto the end of this one.
-	void merge(LinkedList *otherlist);
+
+
 
 	// recursive methods to add for warmup
 	int countOccurrencesRec(int m);
