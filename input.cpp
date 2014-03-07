@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-
+#include <cstdio>
 #include "Node.h"
 #include "LinkedList.h"
 #include "Heap.h"
@@ -64,13 +64,13 @@ int main(int argc, char* argv[]) {
 		//printf("findTwo : %i\n", findTwo);
 
 		if(findOne == 0 && findTwo == 0){ //relation is an independant set
-			//printf("added unique set\n");
+		  //printf("added unique set\n");
 			cout <<one << " " << two << "\n";
 			graph.addUniqueSet(one,two);
 		}else if(findOne> 0 && findTwo > 0 && findTwo != findOne){ //relation has nodes in two independent sets
-			//printf("merged list %i and %i\n", findOne, findTwo);
-			cout <<one << " " << two << "\n";
 			graph.Union(findOne,findTwo);
+			//	printf("merged list %i and %i\n", findOne, findTwo);
+		      	cout <<one << " " << two << "\n";
 		}else if(findOne > 0 && findTwo ==0){ //Relation has a node from existing set, and an independent set
 			graph.mergeNode(findOne,two);
 			cout <<one << " " << two << "\n";

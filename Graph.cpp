@@ -19,7 +19,8 @@ void Graph::Union(int name1, int name2){
 	int i;
 	LinkedList *first;
 	LinkedList *sec;
-	for(i=0; i<filled; i++){
+
+	for(i=0; i<size; i++){
 		if(array[i].getHead()==name1){
 			first = &array[i];
 		}
