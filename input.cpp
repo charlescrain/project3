@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
 		}else if(findOne > 0 && findTwo ==0){ //Relation has a node from existing set, and an independent set
 			graph.mergeNode(findOne,two);
 			cout <<one << " " << two << "\n";
-		}else if(findOne ==0 && findTwo> 0){
+		}else if(findOne ==0 && findTwo> 0){// ""
 			graph.mergeNode(findTwo,one);
 			cout <<one << " " << two << "\n";
 		}
