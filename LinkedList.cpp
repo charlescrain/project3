@@ -137,7 +137,6 @@ void LinkedList::addTail(int v)
 
 /* removeHead
  * remove the first element in a linked list
- * TODO: update tail pointer
  */
 
 int LinkedList::removeHead()

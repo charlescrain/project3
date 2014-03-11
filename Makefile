@@ -1,3 +1,3 @@
 all:
 
-	g++ *.cpp -o proj3
+	g++ sbSocialSpan.cpp -o proj3
